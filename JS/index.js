@@ -1,39 +1,41 @@
-/* let n = parseInt(prompt("ingrese la cantidad de alumnos"))
-console.log("cantidad de alumnos "+n)
-for( let i = 1;i<=n;i++){
-    let nota=parseInt(prompt("ingrese la nota del alumno "+i))
-    console.log("La nota del alumno numero "+i+"es de "+nota)
+
+function confirmar() {
+    return confirm("bienvenidos al galpon de Juan!! Un lugar seguro para almacenar autos\n\n¿Deseas almacenar este auto en el estacionamiento?");
 }
- */
-/* Ingresar usando una función, los nombres de los vehículos.
-b. Pasar los nombres de los vehículos todos a mayúscula. Usar strupr(cad1). Esta función convierte la misma cadena a
-mayúscula.
-c. Usando una función, copiar en otro vector los nombres de los vehículos Ordenados, alfabéticamente de menor a
-mayor. Puedes usar strcmp(cad1,cad2), strcpy(cad1,cad2)
-d. Utilizar una función y mostrar el vector ordenado.
-e. Utilizar una función y mostrar el vector Original (el que no está ordenado) */
+function horas() {
+    return parseInt(prompt("Ingrese la cantidad de horas que desea dejar el auto \n\nHora 500 $ \n+4 horas se cobra un adicional de 250 $"));
+}
 
-alert("bienvenidos al galpon de Juan!! Un lugar seguro para almacenar autos")
-confirm("Le brindamos la tranquilidad de dejar su auto en buenas manos!! Desea confiarnos su auto?")
+    function CalcPrecioFinal(HorasTotal) {
+    const PrecioHora = 500; 
+    const PrecioAdicional = 250; 
+    let PrecioFinal = HorasTotal * PrecioHora;
+
+    if (HorasTotal > 4) {
+    PrecioFinal= PrecioFinal + PrecioAdicional;
+    }
+
+    return PrecioFinal;
+}
 
 
 
 
-function ingreso(autos){
-    
-    for( let i = 1;i<=n;i++){
-        const autos = [""]
-        autos.push(prompt("ingrese la marca del auto numero "+i))
-        console.log(autos)
-        
-        }
-        return ingreso
-        
+function main() {
+    let repetir;
+
+    do{
+    const confirmacion = confirmar();
+
+    if (confirmacion) {
+    const HorasTotal = horas();
+    const PrecioFinal = CalcPrecioFinal(HorasTotal);
+    alert("El precio final es de $ "+PrecioFinal);
+    } else {
+        alert("No se almacenará ningún auto en el estacionamiento.");
+    }
+    let repetir = confirm("¿Desea dejar otro auto?");
+    } while(repetir == true)
 
 }
-let n = parseInt(prompt("ingrese la cantidad de lugares a ocupar en el galpon"))
-console.log("lugares reservados: "+n)
-console.log(ingreso(n))
-
-
-
+main();
