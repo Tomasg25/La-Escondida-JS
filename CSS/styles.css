@@ -183,7 +183,7 @@ html {
 .contenedor-main .contenedor-boton-conf .ver{
     display: none;
 }
-.contenedor-main .contenedor-boton-conf.boton:hover{
+.contenedor-main .contenedor-boton-conf .boton:hover{
     transform: scale(1.1);
 }
 
