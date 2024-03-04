@@ -7,9 +7,9 @@
 html {
     font-size: 62.5%;
     /*cambia la medida rem(16px) a 10 px*/
-    font-family: 'Calibri', cursive;
+    font-family: 'Calibri';
     background-image: url(../img/fondo-madera.jpg);
-    font-weight: 700;
+    font-weight: 750;
     color: #ffffff;
     
 }
@@ -139,10 +139,11 @@ html {
 .contenedor-reserva .card{
     background-color: #ba9b7d;
     width: 400px;
-    padding: 30px;
+    padding: 30px 30px 5px 30px;
     margin: auto;
     margin-top: 40px;
-    border-radius: 4px;
+    margin-bottom: 0px;
+    border-radius: 4px 4px 0px 0px ;
     box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
     -webkit-box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
     -moz-box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
@@ -151,7 +152,22 @@ html {
     font-size: 22px;
     margin-bottom: 20px;
 }
-.contenedor-reserva .card .button{
+.contenedor-main .contenedor-boton-no{
+    display: none;
+}
+.contenedor-main .contenedor-boton-conf{
+    background-color: #ba9b7d;
+    width: 400px;
+    padding: 0px 30px;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
+    -webkit-box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
+    -moz-box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
+}
+.contenedor-main .contenedor-boton-conf .boton{
     text-align: center;
     width: 100%;
     background-color: #705335;
@@ -162,8 +178,12 @@ html {
     font-size: 16px;
     color: #ffffff;
     font-size: 20px;
+    margin-bottom: 30px;
 }
-.contenedor-reserva .card .button:hover{
+.contenedor-main .contenedor-boton-conf .ver{
+    display: none;
+}
+.contenedor-main .contenedor-boton-conf.boton:hover{
     transform: scale(1.1);
 }
 

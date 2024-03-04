@@ -72,11 +72,10 @@ let $resStorage = localStorage.getItem("datosStorage")
 let resCarga = JSON.parse($resStorage)
 let $datosR = document.getElementById("datosReserva")
 let $btnVer= document.getElementById("verRes")
-        console.log(resCarga)
-        console.log(reservas)
+let $btnConf = document.getElementById("btn-confirm")
+let $divBtConf = document.getElementById("div-conf")
 
 $btnVer.onclick = () =>{
-    console.log(resCarga)
     resCarga.forEach(reservas => {
         let contenedor = document.createElement("div")
         contenedor.className = "card"
@@ -88,17 +87,15 @@ $btnVer.onclick = () =>{
                                 <li class="elements"> TELEFONO: ${reservas.telefono}</li>
                                 <li class="elements"> SECTOR DE PREFERENCIA: ${reservas.sector} </li>
                                 <li class="elements"> CANTIDAD DE PERSONAS : ${reservas.personas} </li>
-                                <input class="button" type="submit" value="Confirmar Datos" id="btn-confirm">
                                 </ul>`
+        $btnConf.className = "boton"
+        $divBtConf.className= "contenedor-boton-conf"
         datosReserva.appendChild(contenedor)
         localStorage.clear();
         resCarga = [] 
-        console.log(resCarga)
+
     });
 }
-
-$btnConf = document.getElementById("btn-confirm")
-
-$btnConf.onclick=()=>{
+$btnConf.onclick = () =>{
     document.location.reload();
 }
