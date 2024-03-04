@@ -3,12 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- JS -->
-    <script defer src="./JS/index.js"></script>
-    <title>Document</title>
+    <title>LA ESCONDIDA-Inicio</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body>
-    <h1>Galpon de estacionamiento</h1>
-    <p>esto es un simulador de un estacionamiento en el que se ingresa la cantidad de horas que se va a dejar un auto estacionado y se factura un precio final  a abonar en funcion de las horas que se deje el auto, una hora cuesta 500$ y se cobra un adicional por dejarlo mas de 4 horas</p>
+    <!-- Header -->
+    <header>
+        <div class="logo-img">
+            <img src="./img/logo-la-escondida.jpg" alt="Logo del Bar La Escondida">
+        </div>
+    </header>
+    <!-- Main -->
+    <main> 
+        <section class="contenedor-main">
+            <div class="contenedor-info">
+                <div class="titulo">
+                    <h1 id="h1">LA ESCONDIDA</h1>
+                </div>
+                <div class="subt">
+                    <h2>Animate a vistiar "La Escondida", donde el folclore cobra vida. Experimenta la pasión de nuestra música, bailes tradicionales Guitarreada con amigos, Música en vivo y Comidas Regionales. ¡Te esperamos para una noche llena de música, baile y alegría!</h2>
+                </div>
+            </div>
+            <div class="formulario">    
+                <form id="form" action="" >
+                    <h3> Reserva Tu Mesa en La Escondida!!</h3>            
+                        <input class="elements" type="text"  placeholder="Tu Nombre" id="nombre">
+                        <input class="elements" type="email"  placeholder="Tú email de contacto" id="mail">
+                        <input class="elements" type="date" id="fecha">                       
+                        <input class="elements" type="number" placeholder="Telefono" id="telefono">                       
+                        <select class="elements" id="sector">
+                            <option value="Salón Principal">Salón Principal</option>
+                            <option value="Salón de el Fondo">Salón de el Fondo</option>
+                            <option value="Patio">Patio</option>
+                            <option value="En el sector que tenga disponibilidad">En el sector que tenga disponibilidad</option>
+                        </select>
+                        <div class="personas" >                         
+                            <p>Cantidad de personas</p>
+                            <div class="counter">
+                                <button  id="plus-btn">+</button>
+                                <span  id="counter">0</span>
+                                <button  id="minus-btn">-</button>
+                            </div> 
+                        </div>
+                        <!-- <p>Luego de que envies el formulario te contactaremos para confirmar tu reserva!!</p> -->
+                        <input class="button" type="submit" value="Enviar" id="btn-enviar">
+                </form>
+            </div>
+
+            <div class="contenedor-reserva" id="datosReserva">
+                <li class="verR" id="verRes">
+                    <a href="#card" >- - - - - - - - - - - -  - Ver reserva  - - - - - - - - - - - - -</a>
+                </li>
+            </div>
+    </section>
+    </main>  
 </body>
+    <!-- JS -->
+    <script src="./JS/index.js"></script>
 </html>

@@ -1,0 +1,180 @@
+/* bg color card #ba9b7d; */
+/* color letras #ffffff; */
+/* font family 'Alice', cursive; */
+/* font weight y weigth-bold = 700 */
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /*cambia la medida rem(16px) a 10 px*/
+    font-family: 'Calibri', cursive;
+    background-image: url(../img/fondo-madera.jpg);
+    font-weight: 700;
+    color: #ffffff;
+    
+}
+/* Header */
+.logo-img{
+    display: flex;
+    justify-content: center;
+    img{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+    }
+}
+/* Main */
+.contenedor-main.contenedor-info{
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+}
+.titulo {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.subt {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-size: 12px;
+}
+.formulario {
+    background-color: #ba9b7d;
+    width: 400px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 4px;
+    box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
+        -webkit-box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
+        -moz-box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
+}
+.formulario form h3{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.elements{
+    width: 100%;
+    background-color: #705335;
+    color: #ffffff ;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1a1919f8;
+    font-size: 18px;
+}
+/* .formulario form p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+    padding-top: 10px;
+} */
+.formulario .button{
+    text-align: center;
+    width: 100%;
+    background-color: #705335;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 10px 0px 0px 0px;
+    font-size: 16px;
+    color: #ffffff;
+    font-size: 20px;
+}
+.formulario .button:hover{
+    transform: scale(1.1);
+}
+.formulario form .personas{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.counter{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+.formulario form .personas p{
+    text-align: start;
+    font-size: 16px;
+}
+.formulario form .personas button{
+    border:none;
+    width: 20px;
+    height: 20px;
+    margin: 9px;
+    background-color: #ba9b7d;
+    border-radius: 15%;
+}
+.formulario form .personas button:hover{
+    transform: scale(1.1);
+}
+.formulario form .personas{
+    width: 100%;
+    background-color: #705335;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1a1919f8;
+    font-size: 18px;
+    height: 60px;
+}
+
+/* Ver reserva */
+.contenedor-reserva .verR {
+    list-style: none;
+    width: 100%;
+    border: none;
+    padding: 12px;
+    background-color: #705335;
+    margin: 16px 0;
+
+}
+.contenedor-reserva .verR a{
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+.contenedor-reserva .verR:hover {
+    transform: scale( 1, 1.1);
+}
+.contenedor-reserva .card{
+    background-color: #ba9b7d;
+    width: 400px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 4px;
+    box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
+    -webkit-box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
+    -moz-box-shadow: 19px 19px 22px 0px rgba(0, 0, 0, 0.68);
+}
+.contenedor-reserva .card h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.contenedor-reserva .card .button{
+    text-align: center;
+    width: 100%;
+    background-color: #705335;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 10px 0px 0px 0px;
+    font-size: 16px;
+    color: #ffffff;
+    font-size: 20px;
+}
+.contenedor-reserva .card .button:hover{
+    transform: scale(1.1);
+}
