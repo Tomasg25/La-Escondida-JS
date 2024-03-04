@@ -99,6 +99,6 @@ $btnVer.onclick = () =>{
 
 $btnConf = document.getElementById("btn-confirm")
 
-$btnConf.onclick = ()=>{
+$btnConf.onclick=()=>{
     document.location.reload();
 }
