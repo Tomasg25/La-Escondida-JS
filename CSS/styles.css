@@ -167,7 +167,7 @@ html {
     transform: scale(1.1);
 }
 
-@media screen and (min-width: 320px) and (max-width: 450px){
+@media screen and (min-width: 300px) and (max-width: 450px){
     .formulario{
         width: 300px;
     }
