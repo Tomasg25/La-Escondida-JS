@@ -194,4 +194,7 @@ html {
     .contenedor-reserva .card{
         width: 300px;
     }
+    .contenedor-main .contenedor-boton-conf{
+        width: 300px;
+    }
 }
