@@ -1,0 +1,71 @@
+[
+    {
+        "nombre" : "Andres Hernandez",
+        "mail" : "Andreshernandez@gmail.com",
+        "fecha" : "2024-03-23",
+        "telefono" : 3814566723,
+        "sector" : "Patio",
+        "personas" : 6,
+        "id": 0
+    },
+
+    {
+    "nombre" : "Maria Fernandez",
+    "mail" : "Mfernandez@gmail.com",
+    "fecha" : "2024-03-23",
+    "telefono" : 3819882415,
+    "sector" : "Salon Principal",
+    "personas" : 2,
+    "id": 1
+    },
+
+    {
+    "nombre" : "Alberto Avalos",
+    "mail" : "AlbertoA@gmail.com",
+    "fecha" : "2024-03-23",
+    "telefono" : 3819114528,
+    "sector" : "Patio",
+    "personas" : 4,
+    "id": 2
+    },
+
+    {
+    "nombre" : "Martin Rmirez",
+    "mail": "MRamirez@gmail.com",
+    "fecha" : "2024-03-22",
+    "telefono" : 3813882301,
+    "sector" : "Salon de el Fondo",
+    "personas" : 5,
+    "id": 3
+    },
+
+    {
+    "nombre" : "Angela Mendez",
+    "mail" : "MendezA@gmail.com",
+    "fecha" : "2024-03-22",
+    "telefono" : 3814229141,
+    "sector" : "En el sector que tenga disponibilidad ",
+    "personas" : 6,
+    "id": 4
+    },
+
+    {
+        "nombre": "Maria Domingez",
+        "mail": "Mdominguez@gmail.com",
+        "fecha": "2024-03-23",
+        "telefono": 3813091743,
+        "sector": "En el sector que tenga disponibilidad ",
+        "personas": 7,
+        "id": 5
+    },
+
+    {
+        "nombre": "Mario Perez",
+        "mail": "Pmario5@gmail.com",
+        "fecha": "2024-03-22",
+        "telefono": 3814027548,
+        "sector": "Patio",
+        "personas": 3,
+        "id": 6
+    }
+]

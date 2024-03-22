@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../img/logo-la-escondida.jpg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA ESCONDIDA | reservar</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        
+    </header>
+    <!-- Main -->
+    <main> 
+        <section class="contenedor-usuario">
+            <div class="inicio-btn">
+                <a href="../index.html"><img class="btn-inicio" src="../img/house-svgrepo-com.svg" alt="imagen de casa"></a>
+            </div>
+            <div class="formulario">    
+                <form id="form" action="" >
+                    <h3> Reserva Tu Mesa en La Escondida!!</h3>            
+                        <input class="elements" type="text"  placeholder="Tu Nombre" id="nombre">
+                        <input class="elements" type="email"  placeholder="Tú email de contacto" id="mail">
+                        <input class="elements" type="date" id="fecha">                       
+                        <input class="elements" type="number" placeholder="Telefono" id="telefono">                       
+                        <select class="elements" id="sector">
+                            <option value="Salón Principal">Salón Principal</option>
+                            <option value="Salón de el Fondo">Salón de el Fondo</option>
+                            <option value="Patio">Patio</option>
+                            <option value="En el sector que tenga disponibilidad">En el sector que tenga disponibilidad</option>
+                        </select>
+                        <div class="personas" >                         
+                            <p>Cantidad de personas</p>
+                            <div class="counter">
+                                <button  id="minus-btn">-</button>
+                                <span  id="counter">0</span>
+                                <button  id="plus-btn">+</button>
+                            </div> 
+                        </div>
+                        <input class="button" type="submit" value="Enviar" id="btn-enviar">
+                </form>
+            </div>
+        </section>
+    </main>  
+    <!-- Sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+    <!-- JS Reserva -->
+    <script src="../JS/Reserva.js"></script>
+
+</html>
