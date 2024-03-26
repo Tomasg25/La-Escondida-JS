@@ -8,6 +8,8 @@ $btnIngreso.onclick = () => {
         input: "password",
         inputLabel: "Password",
         inputPlaceholder: "Enter your password",
+        background: "#2c2824",
+        color: "#ffffff",
         inputAttributes: {
             maxlength: "15",
             autocapitalize: "off",
@@ -21,7 +23,9 @@ $btnIngreso.onclick = () => {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Contraseña incorrecta! porfavor intente nuevamente..."
+                    text: "Contraseña incorrecta! porfavor intente nuevamente...",
+                    background: "#2c2824",
+                    color: "#ffffff",
                 });
             }
         }

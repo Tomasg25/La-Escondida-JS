@@ -7,7 +7,7 @@ function renderConfirmRes (reservaConf){
     reservaConf.forEach(product => {
         const render = document.createElement("div")
         render.className = "card"
-        render.innerHTML =`<ul id="${product.id}">
+        render.innerHTML =`<ul>
                                 <li class="elements"> FECHA : ${product.fecha}</li>
                                 <li class="elements"> CANTIDAD DE PERSONAS : ${product.personas} </li>
                                 <li class="elements"> SECTOR: ${product.sector} </li>
@@ -18,7 +18,7 @@ function renderConfirmRes (reservaConf){
     contedorConfirm.appendChild(render)
     })
 }
-localStorage.clear()
+/* localStorage.clear() */
 renderConfirmRes(confirmRes)
 
 

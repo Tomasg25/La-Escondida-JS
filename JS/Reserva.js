@@ -1,22 +1,25 @@
 let reservas = []
+let id = 6
 class Form {
-    constructor(nombre, mail, fecha, telefono, sector, counter) {
+    constructor(nombre, mail, fecha, telefono, sector, counter,id) {
         this.nombre = nombre
         this.mail = mail
         this.fecha = fecha
         this.telefono = telefono
         this.sector = sector
         this.personas = counter
+        this.id = id
     }
 }
-function cargaFicha(nombre, mail, fecha, telefono, sector, counter) {
+function cargaFicha(nombre, mail, fecha, telefono, sector, counter,id) {
     let cargaNombre = nombre;
     let cargaMail = mail;
     let cargaFecha = fecha;
     let cargaTelefono = telefono;
     let cargaSector = sector;
     let cargaPersonas = counter;
-    const form = new Form(cargaNombre, cargaMail, cargaFecha, cargaTelefono, cargaSector, cargaPersonas)
+    let cargaId = id
+    const form = new Form(cargaNombre, cargaMail, cargaFecha, cargaTelefono, cargaSector, cargaPersonas, cargaId)
     reservas.push(form)
 }
 
@@ -62,21 +65,24 @@ $enviar.onclick = (event) => {
     let sector = document.getElementById("sector").value
 
     let counter = contador
-    cargaFicha(nombre, mail, fecha, telefono, sector, counter)
+
+    id++
+
+    cargaFicha(nombre, mail, fecha, telefono, sector, counter,id)
     localStorage.setItem("datosStorage", JSON.stringify(reservas))
     reservas = []
 
     //alerta Sweet para mostrar reserva despues de 1/2 segundo
     let $resStorage = localStorage.getItem("datosStorage")
     let resCarga = JSON.parse($resStorage)
-    localStorage.removeItem("datosStorage")
+
     setTimeout(() => {
         resCarga.forEach(reservas => {
             Swal.fire({
                 title: "<strong>Datos de su reserva</strong>",
                 icon: "éxito",
                 background: "#ba9b7d",
-                width: "27%",
+                width: "30%",
                 html:
                     `<ul>
                         <li class="elements"> NOMBRE : ${reservas.nombre} </li>

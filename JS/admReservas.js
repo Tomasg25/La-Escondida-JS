@@ -1,32 +1,48 @@
-// link con "base de datos"
 let confirmArray = []
 let deletedArray = []
 let $contRes = document.getElementById("cardRes")
+let $Newres = localStorage.getItem("datosStorage")
+let NewRes = JSON.parse($Newres)
 
-fetch("../db/data.json")
-  .then(response => response.json())
-  .then(data => {
-    data.forEach(product => {
-      const card = document.createElement("div")
-      card.className = "card"
-      card.innerHTML = `<ul id="${product.id}">
-                          <li class="elements"> NOMBRE : ${product.nombre} </li>
-                          <li class="elements"> MAIL : ${product.mail}</li>
-                          <li class="elements"> FECHA : ${product.fecha}</li>
-                          <li class="elements"> TELEFONO: ${product.telefono}</li>
-                          <li class="elements"> SECTOR: ${product.sector} </li>
-                          <li class="elements"> CANTIDAD DE PERSONAS : ${product.personas} </li>
-                          <div class="contenedorBtn">
-                                <input class="confirm" id="confirm" type="image" src="../img/check-svgrepo-com.svg">
-                                <input class="cancel" id="cancel" type="image" src="../img/close-svgrepo-com.svg"">
-                          </div>
-                      </ul>`
-      $contRes.appendChild(card)
-    });
+// Función para renderizar las reservas
+function renderReservas(data) {
+  $contRes.innerHTML = "";
+  data.forEach(product => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `<ul id="${product.id}">
+                            <li class="elements"> NOMBRE : ${product.nombre} </li>
+                            <li class="elements"> MAIL : ${product.mail}</li>
+                            <li class="elements"> FECHA : ${product.fecha}</li>
+                            <li class="elements"> TELEFONO: ${product.telefono}</li>
+                            <li class="elements"> SECTOR: ${product.sector} </li>
+                            <li class="elements"> CANTIDAD DE PERSONAS : ${product.personas} </li>
+                            <div class="contenedorBtn">
+                                    <input class="confirm" id="confirm" type="image" src="../img/check-svgrepo-com.svg">
+                                    <input class="cancel" id="cancel" type="image" src="../img/close-svgrepo-com.svg"">
+                            </div>
+                        </ul>`;
+    $contRes.appendChild(card);
+  });
     let products = data
     confirmar(products)
     eliminar(products)
-  })
+  }
+
+if (NewRes) {
+    fetch("../db/data.json")
+        .then(response => response.json())
+        .then(data => {
+            data.unshift(...NewRes);
+            renderReservas(data);
+        });
+} else {
+    fetch("../db/data.json")
+        .then(response => response.json())
+        .then(data => {
+            renderReservas(data);
+        });
+}
 
 function confirmar(products) {
   $btnCard1 = document.querySelectorAll(".confirm")
@@ -85,6 +101,3 @@ function eliminar(products) {
     }
   })
 }
-
-
-//copiar funcion del carrito del prodesor  para eliminar y mandar las reservas confirmadas a una "papelera de reservas¿?"
