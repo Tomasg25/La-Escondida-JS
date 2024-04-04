@@ -7,31 +7,35 @@ let NewRes = JSON.parse($Newres);
 // Función para renderizar las reservas
 function renderReservas(data) {
   $contRes.innerHTML = "";
-  console.log(data);
+
+  const confirmArray = JSON.parse(localStorage.getItem("confirmArray")) || [];
+  const deletedArray = JSON.parse(localStorage.getItem("deletedArray")) || [];
+
   const reservasPendientes = data.filter(product => {
-    return !confirmArray.some(confirmada => confirmada.id === product.id) ||
+    return !confirmArray.some(confirmada => confirmada.id === product.id) &&
       !deletedArray.some(eliminada => eliminada.id === product.id);
   });
   reservasPendientes.forEach(product => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `<ul id="${product.id}">
-                            <li class="elements"> NOMBRE : ${product.nombre} </li>
-                            <li class="elements"> MAIL : ${product.mail}</li>
-                            <li class="elements"> FECHA : ${product.fecha}</li>
-                            <li class="elements"> TELEFONO: ${product.telefono}</li>
-                            <li class="elements"> SECTOR: ${product.sector} </li>
-                            <li class="elements"> CANTIDAD DE PERSONAS : ${product.personas} </li>
-                            <div class="contenedorBtn">
-                                    <input class="confirm" id="confirm" type="image" src="../img/check-svgrepo-com.svg">
-                                    <input class="cancel" id="cancel" type="image" src="../img/close-svgrepo-com.svg"">
-                            </div>
-                        </ul>`;
+                                <li class="elements"> NOMBRE : ${product.nombre} </li>
+                                <li class="elements"> MAIL : ${product.mail}</li>
+                                <li class="elements"> FECHA : ${product.fecha}</li>
+                                <li class="elements"> TELEFONO: ${product.telefono}</li>
+                                <li class="elements"> SECTOR: ${product.sector} </li>
+                                <li class="elements"> CANTIDAD DE PERSONAS : ${product.personas} </li>
+                                <div class="contenedorBtn">
+                                        <input class="confirm" id="confirm" type="image" src="../img/check-svgrepo-com.svg">
+                                        <input class="cancel" id="cancel" type="image" src="../img/close-svgrepo-com.svg"">
+                                </div>
+                            </ul>`;
     $contRes.appendChild(card);
   });
   confirmar(data);
   eliminar(data);
 }
+
 
 if (NewRes) {
   fetch("../db/data.json")
@@ -56,11 +60,11 @@ function confirmar(data) {
       const confirmCardIndex = data.findIndex(item => item.id == confirmIdCard);
 
       if (confirmCardIndex !== -1) {
-        const confirmCard = data.splice(confirmCardIndex, 1)[0]; // Eliminar el elemento del array
+        const confirmCard = data.splice(confirmCardIndex, 1)[0];
         confirmArray.push(confirmCard);
-        localStorage.setItem("confirmArray", JSON.stringify(confirmArray));
+        $ConfirmStorage = localStorage.setItem("confirmArray", JSON.stringify(confirmArray));
         e.currentTarget.parentElement.parentElement.parentElement.remove();
-        renderReservas(data); // Renderizar nuevamente las reservas después de la confirmación
+        renderReservas(data);
         Toastify({
           text: "Reserva Confirmada!!",
           duration: 3000,
@@ -90,11 +94,11 @@ function eliminar(data) {
       const deletedCardIndex = data.findIndex(item => item.id == deletedIdCard);
 
       if (deletedCardIndex !== -1) {
-        const deletedCard = data.splice(deletedCardIndex, 1)[0]; // Eliminar el elemento del array
+        const deletedCard = data.splice(deletedCardIndex, 1)[0];
         deletedArray.push(deletedCard);
         localStorage.setItem("deletedArray", JSON.stringify(deletedArray));
         e.currentTarget.parentElement.parentElement.parentElement.remove();
-        renderReservas(data); // Renderizar nuevamente las reservas después de la eliminación
+        renderReservas(data);
         Toastify({
           text: "Reserva Eliminada!!",
           duration: 3000,
